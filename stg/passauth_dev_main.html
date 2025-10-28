@@ -12,16 +12,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&amp;display=swap" />
 
-	<link rel="preload" as="image" href="http://www-stg.passauth.co.kr:9100/images/logo_passdev.png">
-	<link rel="preload" as="image" href="http://www-stg.passauth.co.kr:9100/images/search-icon.svg">
-	<link rel="preload" as="image" href="http://www-stg.passauth.co.kr:9100/images/background_pass.png">
-
-	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/f26fb6eb695c481e.css" crossorigin="" data-precedence="next" />
-	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/6553cfe240351586.css" crossorigin="" data-precedence="next" />
-	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/e0ed9d387f4ef5a5.css" crossorigin="" data-precedence="next" />
-	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/c96167022fdaa3b4.css" crossorigin="" data-precedence="next" />
-	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/01a9b4ad76a46234.css" crossorigin="" data-precedence="next" />
-
 
 <style>
 * {margin:0; padding:0; list-style:none; text-decoration:none; color:inherit; box-sizing:border-box;}
@@ -80,14 +70,19 @@
 
 /* main-intro_wrap */
 .main-intro_wrap {display:flex; background: #FF3747; background: linear-gradient(90deg, rgba(255, 55, 71, 1) 0%, rgba(255, 149, 88, 1) 100%);}
-.main-intro_wrap .inner {display:flex; flex-direction:column; justify-content:center; gap:48px; height:400px; width:100%; max-width:1080px; margin:0 auto; padding:6px 40px 0;}
-.main-intro_wrap .inner {background:url('./images/img_main01.png') no-repeat right 101px center / 320px 320px;}
+.main-intro_wrap .inner {display:flex; flex-direction:column; justify-content:center; position:relative; gap:48px; height:400px; width:100%; max-width:1080px; margin:0 auto; padding:6px 40px 0;}
+.main-intro_wrap .inner {}
 .main-intro_wrap .inner div.txt_wrap {display:flex; flex-direction:column; align-items: start; gap:8px; color:#fff;}
 .main-intro_wrap .inner div.txt_wrap h2 {color:#fff; font-size:32px; line-height:42px; font-weight:700;}
 .main-intro_wrap .inner div.txt_wrap p {color:rgba(255,255,255,0.7); font-size:16px;}
 .main-intro_wrap .inner button.btn {position:relative; top:0; left:0; width:120px; height:52px; border-radius:4px; background-color:#333; border:none; transition:all 0.2s ease-in-out; cursor:pointer;}
 .main-intro_wrap .inner button.btn span {color:#fff; font-size:14px; font-weight:500;}
 .main-intro_wrap .inner button.btn:hover {box-shadow:0 1px 2px rgba(0,0,0,0.16);}
+.main-intro_wrap .inner::after {content:""; display:block; position:absolute; right:101px; width:320px; height:320px; background:url('./images/img_main01.svg') no-repeat center / contain; animation: intro_ani 2s infinite ease-in-out;}
+@keyframes intro_ani {
+	0%,100% {transform:translateY(0);}
+	50% {transform:translateY(6px);}
+}
 /* // main-intro_wrap */
 
 /* dev-tools_wrap */
@@ -123,7 +118,7 @@
 .main-notice_wrap .main-notice-card div.tit {padding-bottom:20px; border-bottom:1px solid #ddd; color:#000; font-size:18px; line-height:22px; font-weight:700;;}
 .main-notice_wrap .main-notice-card div.txt {flex:1; color:#333; font-size:14px; line-height:22px;}
 .main-notice_wrap .main-notice-card div.date {color:#888; font-size:14px; line-height:20px;}
-.main-notice_wrap .main-notice-card button.btn {position:absolute; right:31px; bottom:30px; height:20px; border:none; background-color:transparent; color:#FF3A4A; font-size:14px;}
+.main-notice_wrap .main-notice-card button.btn {position:absolute; right:31px; bottom:30px; height:20px; border:none; background-color:transparent; color:#FF3A4A; font-size:14px; cursor:pointer;}
 .main-notice_wrap .main-notice-card:hover {top:-4px; border-radius:16px; box-shadow:1px 2px 4px rgba(0,0,0,0.16);}
 .main-notice_wrap .btn_more {display:inline-block; width:160px; height:52px; margin-top:40px; background-color:#333; border-radius:4px;}
 .main-notice_wrap .btn_more span {display:inline-block; line-height:20px; color:#fff; font-size:14px; font-weight:500;}
@@ -194,7 +189,7 @@
 				<button type="button" class="btn"><span>시작하기</span></button>
 			</div>
 		</div>
-		<!-- // intro_wrap -->
+		<!-- // main-intro_wrap -->
 
 
 		<div class="dev-tools_wrap">
