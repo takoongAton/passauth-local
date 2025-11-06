@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>PASS 인증서 개발자 센터 메인</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<!-- <link rel="stylesheet t" href="../../css/reset.css" /> -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&amp;display=swap" />
+
+	<link rel="preload" as="image" href="http://www-stg.passauth.co.kr:9100/images/logo_passdev.png">
+	<link rel="preload" as="image" href="http://www-stg.passauth.co.kr:9100/images/search-icon.svg">
+	<link rel="preload" as="image" href="http://www-stg.passauth.co.kr:9100/images/background_pass.png">
+
+	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/f26fb6eb695c481e.css" crossorigin="" data-precedence="next" />
+	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/6553cfe240351586.css" crossorigin="" data-precedence="next" />
+	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/e0ed9d387f4ef5a5.css" crossorigin="" data-precedence="next" />
+	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/c96167022fdaa3b4.css" crossorigin="" data-precedence="next" />
+	<link rel="stylesheet" href="http://www-stg.passauth.co.kr:9100/_next/static/css/01a9b4ad76a46234.css" crossorigin="" data-precedence="next" />
+
+
+<style>
+* {margin:0; padding:0; list-style:none; text-decoration:none; color:inherit; box-sizing:border-box;}
+
+
+/* header container */
+.header {position:fixed; top:0; left:0; width:100%; background-color:#eee; color:#fff; z-index:1000;}
+.header .header-container {display:flex; justify-content:space-between; gap:20px; align-items:center; max-width:1920px; padding:0 40px; margin:0 auto;}
+.header .header-container .logo-section {flex:1; line-height:1em;}
+.header .header-container .logo-section div.logo-background {display:inline-block; cursor: pointer;}
+.header .header-container .logo-section div.logo-background img {width:auto; height:24px;}
+/* // header container */
+
+/* header navigation */
+.header .header-container nav.navigation {display:flex; align-items:center; gap:20px;}
+.header .header-container nav.navigation .nav-item {display:flex; align-items:center; position:relative; height:68px; padding:21px 12px; color:#666; cursor:pointer;}
+.header .header-container nav.navigation .nav-item span {white-space:nowrap;}
+.header .header-container nav.navigation .nav-item::after {content:""; display:block; position:absolute; bottom:0; left:50%; width:0; height:2px; background-color:#FF3A4A; transition: all 0.2s ease;}
+.header .header-container nav.navigation .nav-item.active {color:#000; font-weight:700;}
+.header .header-container nav.navigation .nav-item.active::after {left:0; width:100%;}
+/* // header navigation */
+
+/* header logged */
+.logged-in-section {display:flex; align-items:center; gap:20px;}
+.logged-in-section .user-profile-section  {display:flex; align-items:center; gap:10px;}
+.logged-in-section .user-profile-section .user-profile-avatar {display:flex; justify-content:center; align-items:center; width:32px; height:32px; border-radius:100%; background: linear-gradient(135deg, #667eea, #764ba2);}
+.logged-in-section .user-profile-section .user-info .user-email {color:#333; font-size:14px; font-family:'Pretendard';}
+/* header logged */
+
+/* header login/logout button */
+.logged-in-section button {}
+.logged-in-section button.login-btn,
+.logged-in-section button.logout-btn {width:98px; height:40px; border:1px solid #ccc; border-radius:4px; font-size:18px; font-weight:500;}
+.logged-in-section button.login-btn {background-color:#fff; color:#333;}
+.logged-in-section button.logout-btn {background-color: rgba(220, 53, 69, .1); border-color: #dc3545; color: #ff6b7a;}
+.logged-in-section button.login-btn:hover {background-color: #fff; color: #333}
+.logged-in-section button.logout-btn:hover {background-color: #dc3545; color:#fff;}
+/* header login/logout button */
+
+/* header search */
+.search-section {margin-left:40px;}
+.search-section .header-search-bar {position:relative; width:240px; height:40px;}
+.search-section .header-search-bar .header-search-input {width:100%; height:100%; margin:0; padding:10px 40px 10px 10px; border:0; border-radius:4px; background-color:rgba(255,255,255,0.7); font-size:14px;; outline:0;}
+.search-section .header-search-bar .header-search-input::placeholder {color:#888;}
+.search-section .header-search-bar .header-search-icon {display:flex; justify-content:center; align-items:center; position:absolute; top:6px; right:10px; width:28px; height:28px;}
+/* // header search */
+
+
+
+/* 메인 컨텐츠 타이틀 (메인공통) */
+.main-layout-content .inner .tit_wrap {margin-bottom:47px; text-align:center;}
+.main-layout-content .inner .tit_wrap h2 {color:#000; font-size:28px; line-height:34px; font-weight:700;}
+.main-layout-content .inner .tit_wrap p {margin-top:0.9375em; color:#555; font-size:16px; font-weight:400;}
+/* // 메인 컨텐츠 타이틀 */
+
+
+
+/* main-intro_wrap */
+.main-intro_wrap {display:flex; background: #FF3747; background: linear-gradient(90deg, rgba(255, 55, 71, 1) 0%, rgba(255, 149, 88, 1) 100%);}
+.main-intro_wrap .inner {display:flex; flex-direction:column; justify-content:center; gap:48px; height:400px; width:100%; max-width:1080px; margin:0 auto; padding:6px 40px 0;}
+.main-intro_wrap .inner {background:url('./images/img_main01.png') no-repeat right 101px center / 320px 320px;}
+.main-intro_wrap .inner div.txt_wrap {display:flex; flex-direction:column; align-items: start; gap:8px; color:#fff;}
+.main-intro_wrap .inner div.txt_wrap h2 {color:#fff; font-size:32px; line-height:42px; font-weight:700;}
+.main-intro_wrap .inner div.txt_wrap p {color:rgba(255,255,255,0.7); font-size:16px;}
+.main-intro_wrap .inner button.btn {width:120px; height:52px; border-radius:4px; background-color:#333; border:none;}
+.main-intro_wrap .inner button.btn span {color:#fff; font-size:14px; font-weight:500;}
+/* // main-intro_wrap */
+
+/* dev-tools_wrap */
+.dev-tools_wrap {padding:100px 0 120px;}
+.dev-tools_wrap .inner {max-width:1080px; margin:0 auto; padding:0 40px;}
+
+.dev_grid_wrap {display:flex; flex-direction: column; gap:16px;; width:100%;}
+
+/* .main-tool-cards {display:grid; grid-template-columns:calc(calc(100% - 48px) / 4) calc(calc(100% - 48px) / 4) calc(calc(100% - 48px) / 4) calc(calc(100% - 48px) / 4)   ; width:100%; gap:16px;}
+.main-tool-cards .main-tool-card {display:flex; flex-direction:column; justify-content:space-between; gap:9px; position:relative; top:0; left:0; width:100%; height:100%; padding:24px 20px 20px 24px; background-color:#F5F5F5; border-radius:8px;border:1px solid transparent; cursor:pointer; transition:all 0.2s ease-in-out; box-shadow:0 1px 4px rgba(0,0,0,0);}
+.main-tool-cards .main-tool-card h2 {color:#000; font-size:20px; transition:all 0.2s ease-in-out;}
+.main-tool-cards .main-tool-card p {flex:1; color:#555; font-size:14px; transition:all 0.2s ease-in-out;}
+.main-tool-cards .main-tool-card .main-tool-card-icon {display:flex; flex-direction: row-reverse; order:1;}
+.main-tool-cards .main-tool-card .main-tool-card-icon img {display:block; width:84px; height:84px;}
+.main-tool-cards .main-tool-card:hover {margin-top:-4px; border-radius:12px; box-shadow:1px 2px 4px rgba(0,0,0,0.16);}
+
+.main-tool-cards_22 {display:flex; flex-direction:column; gap:16px;}
+.main-tool-cards_22 .main-tool-card {display:flex; justify-content:space-between; align-items:center; gap:20px; position:relative; width:100%; padding:8px 40px; background-color:#F5F5F5; border-radius:8px; cursor:pointer;}
+.main-tool-cards_22 .main-tool-card .txt_wrap {flex:1;}
+.main-tool-cards_22 .main-tool-card h2 {color:#000; font-size:20px;}
+.main-tool-cards_22 .main-tool-card p {flex:1; color:#555; font-size:14px}
+.main-tool-cards_22 .main-tool-card .main-tool-card-icon img {display:block; width:84px; height:84px;}
+.main-tool-cards_22 .main-tool-card::after {content:"";display:block; position:relative; left:0; width:48px; height:48px; background:url('./images/Group 170.png') no-repeat left top / contain; transition:all 0.2s ease-in-out;}
+.main-tool-cards_22 .main-tool-card:hover::after {left:10px;} */
+
+
+
+.main-tool-cards {width:100%; gap:16px;}
+.main-tool-cards .main-tool-card {display:flex; position:relative; top:0; left:0; width:100%; background-color:#F5F5F5; border-radius:8px; border:1px solid transparent; cursor:pointer; transition:all 0.2s ease-in-out; box-shadow:0 1px 4px rgba(0,0,0,0);}
+.main-tool-cards .main-tool-card h2 {color:#000; font-size:20px; transition:all 0.2s ease-in-out;}
+.main-tool-cards .main-tool-card p {flex:1; color:#555; font-size:14px; transition:all 0.2s ease-in-out;}
+.main-tool-cards .main-tool-card .main-tool-card-icon img {display:block; width:84px; height:84px;}
+.main-tool-cards .main-tool-card:hover {border-radius:12px; box-shadow:1px 2px 4px rgba(0,0,0,0.16);}
+
+
+.main-tool-cards.row {display:grid; grid-template-columns:calc(calc(100% - 48px) / 4) calc(calc(100% - 48px) / 4) calc(calc(100% - 48px) / 4) calc(calc(100% - 48px) / 4);}
+.main-tool-cards.row .main-tool-card {flex-direction:column; gap:9px; height:100%; padding:24px 20px 20px 24px;}
+.main-tool-cards.row .main-tool-card .main-tool-card-icon {display:flex; flex-direction: row-reverse; order:1;}
+.main-tool-cards.row .main-tool-card:hover {margin-top:-4px;}
+
+.main-tool-cards.col {display:flex; flex-direction:column;}
+.main-tool-cards.col .main-tool-card {align-items:center; gap:20px;  padding:8px 40px;}
+.main-tool-cards.col .main-tool-card .txt_wrap {flex:1;}
+.main-tool-cards.col .main-tool-card::after {content:"";display:block; position:relative; left:0; width:48px; height:48px; background:url('./images/Group 170.png') no-repeat left top / contain; transition:all 0.2s ease-in-out;}
+.main-tool-cards.col .main-tool-card:hover::after {left:10px;}
+/* dev-tools_wrap */
+
+
+
+
+
+/* 메인 최근 공지사항 */
+.main-notice_wrap {padding:100px 0 120px; background-color:#f5f5f5;  text-align:center;}
+.main-notice_wrap .inner {width:100%; max-width:1080px; margin:0 auto; padding:0 40px;}
+.main-notice_wrap .main_notice_wrap {display:grid; grid-template-columns:auto auto;; max-width:1000px; gap:32px; margin:0 auto; text-align:left;}
+.main-notice_wrap .main-notice-card {display:flex; flex-direction:column; position:relative; top:0; gap:20px; width:100%; max-width:484px; padding:30px 31px; background-color: #fff; border-radius:10px; transition:all 0.2s ease-in-out;}
+.main-notice_wrap .main-notice-card div.tit {padding-bottom:20px; border-bottom:1px solid #ddd; color:#000; font-size:18px; line-height:22px; font-weight:700;;}
+.main-notice_wrap .main-notice-card div.txt {flex:1; color:#333; font-size:14px; line-height:22px;}
+.main-notice_wrap .main-notice-card div.date {color:#888; font-size:14px; line-height:20px;}
+.main-notice_wrap .main-notice-card button.btn {position:absolute; right:31px; bottom:30px; height:20px; border:none; background-color:transparent; color:#FF3A4A; font-size:14px;}
+.main-notice_wrap .main-notice-card:hover {top:-4px; border-radius:16px; box-shadow:1px 2px 4px rgba(0,0,0,0.16);}
+.main-notice_wrap .btn_more {display:inline-block; width:160px; height:52px; margin-top:40px; background-color:#333; border-radius:4px;}
+.main-notice_wrap .btn_more span {display:inline-block; line-height:20px; color:#fff; font-size:14px; font-weight:500;}
+/* // 메인 최근 공지사항 */
+
+</style>
+</head>
+
+<body>
+
+<div class="main-layout">
+
+
+
+
+	<header class="header">
+		<div class="header-container">
+			<div class="logo-section">
+				<div class="logo-background">
+					<img src="./images/logo_passdev.png" alt="PASS" class="logo-bg-image">
+				</div>
+			</div>
+			<nav class="navigation">
+				<div class="nav-item active">
+					<span>가이드</span>
+				</div>
+				<div class="nav-item ">
+					<span>공지사항</span>
+				</div>
+				<div class="nav-item ">
+					<span>문의/지원</span>
+				</div>
+				<div class="nav-item ">
+					<span>관리</span>
+				</div>
+			</nav>
+			<div class="search-section">
+				<div class="header-search-bar">
+					<input type="text" placeholder="검색어를 입력하세요" class="header-search-input">
+					<div class="header-search-icon">
+						<img src="./images/ico_search.svg" alt="검색">
+					</div>
+				</div>
+			</div>
+			<div class="auth-section">
+				<div class="logged-in-section">
+					<div class="user-profile-section">
+						<div class="user-profile-avatar" title="">
+							<span class="user-initial">U</span>
+						</div>
+						<div class="user-info">
+							<span class="user-email">takoong</span>
+						</div>
+					</div>
+					<button class="login-btn"><span>로그인</span></button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- // header -->
+
+
+
+
+	<div class="main-layout-content">
+		
+		<div class="main-intro_wrap">
+			<div class="inner">
+				<div class="txt_wrap">
+					<h2>PASS 인증서 개발자 센터</h2>
+					<p>PASS 인증서 서비스의 API 연동 및<br />
+						개발을 위한 종합적인 개발 리소스를 제공합니다.</p>
+				</div>
+				<button type="button" class="btn"><span>시작하기</span></button>
+			</div>
+		</div>
+		<!-- // intro_wrap -->
+
+
+		<div class="dev-tools_wrap">
+			<div class="inner">
+				<div class="tit_wrap">
+					<div class="txt_wrap">
+						<h2>PASS 인증서 개발자 센터</h2>
+						<p class="txt">PASS 인증서 서비스의 API 연동 및 개발을 위한 종합적인 개발 리소스를 제공합니다.</p>
+					</div>
+				</div>
+
+				<div class="dev_grid_wrap">
+					<div class="main-tool-cards row">
+						<div class="main-tool-card">
+							<div class="main-tool-card-icon"><img src="./images/img_96_01.png" alt="아이콘" /></div>
+							<div class="txt_wrap">
+								<h2>사전 준비하기</h2>
+								<p>서비스 도메인을 <br />등록하고 관리합니다.</p>
+							</div>
+						</div>
+						<div class="main-tool-card">
+							<div class="main-tool-card-icon"><img src="./images/img_96_02.png" alt="아이콘" /></div>
+							<div class="txt_wrap">
+								<h2>API 가이드</h2>
+								<p>상세한 AP 명세와 <br />연동 가이드를 제공합니다.</p>
+							</div>
+						</div>
+						<div class="main-tool-card">
+							<div class="main-tool-card-icon"><img src="./images/img_96_03.png" alt="아이콘" /></div>
+							<div class="txt_wrap">
+								<h2>인증 체험하기</h2>
+								<p>PASS 인증서 서비스를 <br />직접 체험해보세요.</p>
+							</div>
+						</div>
+						<div class="main-tool-card">
+							<div class="main-tool-card-icon"><img src="./images/img_96_04.png" alt="아이콘" /></div>
+							<div class="txt_wrap">
+								<h2>자주 묻는 질문</h2>
+								<p>서비스 이용 중 궁금하신 점을 <br />FAQ에서 확인해보세요.</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="main-tool-cards col">
+						<!-- <div class="main-tool-card">
+							<div class="main-tool-card-icon"><img src="./images/img_96_01.png" alt="아이콘" /></div>
+							<div class="txt_wrap">
+								<h2>사전 준비하기</h2>
+								<p>서비스 도메인을 <br />등록하고 관리합니다.</p>
+							</div>
+						</div>
+						<div class="main-tool-card">
+							<div class="main-tool-card-icon"><img src="./images/img_96_02.png" alt="아이콘" /></div>
+							<div class="txt_wrap">
+								<h2>API 가이드</h2>
+								<p>상세한 AP 명세와 <br />연동 가이드를 제공합니다.</p>
+							</div>
+						</div>
+						<div class="main-tool-card">
+							<div class="main-tool-card-icon"><img src="./images/img_96_03.png" alt="아이콘" /></div>
+							<div class="txt_wrap">
+								<h2>인증 체험하기</h2>
+								<p>PASS 인증서 서비스를 <br />직접 체험해보세요.</p>
+							</div>
+						</div> -->
+						<div class="main-tool-card">
+							<div class="main-tool-card-icon"><img src="./images/img_96_04.png" alt="아이콘" /></div>
+							<div class="txt_wrap">
+								<h2>자주 묻는 질문</h2>
+								<p>서비스 이용 중 궁금하신 점을 <br />FAQ에서 확인해보세요.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // grid -->
+			</div>
+		</div>
+		<!-- // dev-tools_wrap -->
+
+
+		<div class="main-notice_wrap">
+
+			<div class="inner">
+				<div class="tit_wrap">
+					<div class="txt_wrap">
+						<h2>최근 공지사항</h2>
+					</div>
+				</div>
+
+				<div class="main_notice_wrap">
+					<div class="main-notice-card">
+						<div class="tit">공지사항 제목입니다.</div>
+						<div class="txt">
+							안녕하세요. 휴대폰안심입니다.<br />
+							'LGU+ 및 LGU+ MVNO 개인정보 제3자 제공동의' 약관 변경 안내드립니다.<br />
+						</div>
+						<div class="date">2026.02.15</div>
+						<button type="button" class="btn"><strong>자세히 보기</strong></button>
+					</div>
+
+					<div class="main-notice-card">
+						<div class="tit">공지사항 제목입니다.</div>
+						<div class="txt">
+							안녕하세요. 휴대폰안심입니다.<br />
+							'LGU+ 및 LGU+ MVNO 개인정보 제3자 제공동의' 약관 변경 안내드립니다.<br />
+							1. 변경내용 : 제공하는 개인정보 항목<br />
+							- (기존) 휴대폰번호, 통신사, 성명, 생년월일, 성별, 내/외국인정보, 디바이스 아이디,휴대폰모델명, OS정보, 연계정보(CI), 중복가입 확인정보(DI)
+						</div>
+						<div class="date">2026.02.15</div>
+						<button type="button" class="btn"><strong>자세히 보기</strong></button>
+					</div>
+
+					<div class="main-notice-card">
+						<div class="tit">공지사항 제목입니다.</div>
+						<div class="txt">
+							안녕하세요. 휴대폰안심입니다.<br />
+							'LGU+ 및 LGU+ MVNO 개인정보 제3자 제공동의' 약관 변경 안내드립니다.<br />
+							1. 변경내용 : 제공하는 개인정보 항목<br />
+							- (기존) 휴대폰번호, 통신사, 성명, 생년월일, 성별, 내/외국인정보, 디바이스 아이디,휴대폰모델명, OS정보, 연계정보(CI), 중복가입 확인정보(DI)
+						</div>
+						<div class="date">2026.02.15</div>
+						<button type="button" class="btn"><strong>자세히 보기</strong></button>
+					</div>
+
+					<div class="main-notice-card">
+						<div class="tit">공지사항 제목입니다.</div>
+						<div class="txt">
+							안녕하세요. 휴대폰안심입니다.<br />
+							'LGU+ 및 LGU+ MVNO 개인정보 제3자 제공동의' 약관 변경 안내드립니다.<br />
+							1. 변경내용 : 제공하는 개인정보 항목<br />
+							- (기존) 휴대폰번호, 통신사, 성명, 생년월일, 성별, 내/외국인정보, 디바이스 아이디,휴대폰모델명, OS정보, 연계정보(CI), 중복가입 확인정보(DI)
+						</div>
+						<div class="date">2026.02.15</div>
+						<button type="button" class="btn"><strong>자세히 보기</strong></button>
+					</div>
+				</div>
+				<!-- // main_notice_wrap -->
+
+				<button type="button" class="btn_more"><span class="txt">전체 공지사항 보기</span></button>
+			</div>
+
+		</div>
+		<!-- // main-notice_wrap -->
+
+	</div>
+	<!-- // main-layout-content -->
+
+</div>
+<!-- // main-layout -->
+
+
+
+<style>
+/* 이건 사용 안함 */
+.main-layout-content {padding-top:68px;}
+</style>
+</body>
+</html>
