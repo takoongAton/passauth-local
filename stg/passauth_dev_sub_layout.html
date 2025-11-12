@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>PASS 인증서 개발자 센터 메인</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<link rel="stylesheet t" href="./css/reset.css" />
+	<link rel="stylesheet t" href="./css/dev_passauth.css" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&amp;display=swap" />
+</head>
+
+<body>
+<div class="layout">
+	<header class="header">
+		<div class="header-container">
+			<div class="logo-section">
+				<div class="logo-background">
+					<img src="./images/logo_passdev.png" alt="PASS" class="logo-bg-image">
+				</div>
+			</div>
+			<nav class="navigation">
+				<div class="nav-item active">
+					<span>가이드</span>
+				</div>
+				<div class="nav-item ">
+					<span>공지사항</span>
+				</div>
+				<div class="nav-item ">
+					<span>문의/지원</span>
+				</div>
+				<div class="nav-item ">
+					<span>관리</span>
+				</div>
+			</nav>
+			<div class="search-section">
+				<div class="header-search-bar">
+					<input type="text" placeholder="검색어를 입력하세요" class="header-search-input">
+					<div class="header-search-icon">
+						<img src="./images/ico_search.svg" alt="검색">
+					</div>
+				</div>
+			</div>
+			<div class="auth-section">
+				<div class="logged-in-section">
+					<div class="user-profile-section">
+						<div class="user-profile-avatar" title="">
+							<span class="user-initial">U</span>
+						</div>
+						<div class="user-info">
+							<span class="user-email">takoong</span>
+						</div>
+					</div>
+					<button class="login-btn"><span>로그인</span></button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- // header -->
+
+	<div class="layout-body">
+		
+		<aside class="sidebar">
+			<div class="sidebar-container">
+
+				<div class="menu-section">
+					<div class="menu-large"><span>개발자센터 소개</span></div>
+				</div>
+
+				<div class="menu-section">
+					<div class="menu-large"><span>연동하기</span></div>
+					<div class="menu-medium expandable ">
+						<span>사전 준비</span>
+						<div class="arrow-icon"><img src="./images/arrow-up-icon.svg" alt=""></div>
+					</div>
+					<div class="submenu-container">
+						<div class="menu-small active"><span>도메인 및 방화벽 설정</span></div>
+						<div class="menu-small"><span>서비스 요청</span></div>
+						<div class="menu-small"><span>API 접근 토큰 발급</span></div>
+						<div class="menu-small"><span>테스트 사용자 등록</span></div>
+					</div>
+					
+					<div class="menu-medium expandable expanded">
+						<span>전자서명</span>
+						<div class="arrow-icon"><img src="./images/arrow-up-icon.svg" alt=""></div>
+					</div>
+
+					<div class="submenu-container">
+						<a class="menu-small active" href="/integration/rsa"><span>RSA 키 생성</span></a>
+						<a class="menu-small " href="/integration/app"><span>APP 호출 가이드</span></a>
+						<a class="menu-small " href="/integration/api"><span>API 연동</span></a>
+					</div>
+
+					<a class="menu-medium " href="/integration/mydata"><span>마이데이터</span></a>
+				</div>
+
+				<div class="menu-section">
+					<div class="menu-large"><span>관리</span></div>
+					<a class="menu-medium active" href="/about/feature"><span>기능 소개</span></a>
+					<a class="menu-medium " href="/about/service"><span>서비스 등록하기</span></a>
+					<a class="menu-medium " href="/about/user"><span>사용자 등록하기</span></a>
+				</div>
+				<!-- // menu-section -->
+
+			</div>
+			<!-- // sidebar-container -->
+		</aside>
+		<!-- // sidebar -->
+
+
+
+		<main class="main-content with-sidebar">
+			
+			<div class="pass-certificate-page">
+
+				<div class="pass-content">
+					<div class="inner">
+					
+						<div class="tit_wrap">
+							<div class="txt_wrap">
+								<h2>PASS 인증서 개발자 센터</h2>
+								<p class="txt">PASS 인증서 서비스의 API 연동 및 개발을 위한 종합적인 개발 리소스를 제공합니다.</p>
+							</div>
+						</div>
+						<!-- // tit_wrap -->
+
+						<div class="pass-section">
+							<div class="service-category">
+								<div class="category-header">
+									<div class="category-icon"><img src="./images/ico_certificate_01.png" alt="아이콘"></div>
+									<div class="category-info">
+										<h3>가이드</h3>
+										<p>API 연동부터 서비스 적용까지 단계별 가이드를 제공합니다</p>
+									</div>
+								</div>
+								<div class="service-list">
+									<div class="service-item">
+										<!-- <p>RESTful API 명세서, 샘플 코드, 인증 방법 등 API 연동에 필요한 모든 정보</p> -->
+										<ul>
+											<li>API 명세서 및 파라미터 설명</li>
+											<li>APP 호출 가이드</li>
+											<li>RSA 키 생성 가이드</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- // service-category -->
+
+							<div class="service-category">
+								<div class="category-header">
+									<div class="category-icon"><img src="./images/ico_certificate_02.png" alt="아이콘"></div>
+									<div class="category-info">
+										<h3>공지사항</h3>
+										<p>서비스 업데이트 및 중요 안내사항을 실시간으로 확인할 수 있습니다</p>
+									</div>
+								</div>
+								<div class="service-list">
+									<div class="service-item">
+										<!-- <p>API 버전 업데이트, 새로운 기능 추가 소식</p> -->
+										<ul>
+											<li>시스템 점검</li>
+											<li>정책 변경</li>
+											<li>서비스 업데이트</li>
+											<li>개발자 도구 업데이트</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- // service-category -->
+
+							<div class="service-category">
+								<div class="category-header">
+									<div class="category-icon"><img src="./images/ico_certificate_03.png" alt="아이콘"></div>
+									<div class="category-info">
+										<h3>문의/지원</h3>
+										<p>개발 중 궁금한 사항이나 문제점을 빠르게 해결할 수 있도록 지원합니다</p>
+									</div>
+								</div>
+								<div class="service-list">
+									<div class="service-item">
+										<!-- <p>자주 묻는 질문과 답변으로 빠른 문제 해결</p> -->
+										<ul>
+											<li>기술적 문의 및 상담</li>
+											<li>자주 묻는 질문과 답변으로 빠른 문제 해결</li>
+											<li>버그 신고</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- // service-category -->
+							
+							<div class="service-category">
+								<div class="category-header">
+									<div class="category-icon"><img src="./images/ico_certificate_04.png" alt="아이콘"></div>
+									<div class="category-info">
+										<h3>관리</h3>
+										<p>서비스 운영에 필요한 각종 관리 기능을 제공합니다</p>
+									</div>
+								</div>
+								<div class="service-list">
+									<div class="service-item">
+										<!-- <p>서비스 이용 회사의 기본 정보 및 설정 관리</p> -->
+										<ul>
+											<li>회사 기본 정보 등록/수정</li>
+											<li>성공률 등 서비스 이용 통계</li>
+											<li>담당자 정보 관리</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- // service-category -->
+
+						</div>
+						<!-- // pass-section -->
+
+					</div>
+					<!-- // inner -->
+
+				</div>
+				<!-- // pass-content -->
+			</div>
+			<!-- // pass-certificate-page -->
+
+		</main>
+		<!-- // main-content with-sidebar -->
+
+	</div>
+	<!-- // layout-body -->
+
+</div>
+<!-- // layout -->
+
+</body>
+</html>
