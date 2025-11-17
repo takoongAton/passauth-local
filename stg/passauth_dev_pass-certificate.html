@@ -5,95 +5,13 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-	<!-- <link rel="stylesheet t" href="../../css/reset.css" /> -->
+	
+	<link rel="stylesheet t" href="./css/reset.css" />
+	<link rel="stylesheet t" href="./css/dev_passauth.css" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&amp;display=swap" />
-
-
-<style>
-* {margin:0; padding:0; list-style:none; text-decoration:none; color:inherit; box-sizing:border-box;}
-.layout {display:flex; flex-direction:column; min-height:100vh; padding-top:68px; background-color:#fff;}
-
-/* header container */
-.header {position:fixed; top:0; left:0; width:100%; background-color:#eee; color:#fff; z-index:1000;}
-.header .header-container {display:flex; justify-content:space-between; gap:20px; align-items:center; max-width:1920px; padding:0 40px; margin:0 auto;}
-.header .header-container .logo-section {flex:1; line-height:1em;}
-.header .header-container .logo-section div.logo-background {display:inline-block; cursor: pointer;}
-.header .header-container .logo-section div.logo-background img {width:auto; height:24px;}
-/* // header container */
-
-/* header navigation */
-.header .header-container nav.navigation {display:flex; align-items:center; gap:20px;}
-.header .header-container nav.navigation .nav-item {display:flex; align-items:center; position:relative; height:68px; padding:21px 12px; color:#666; cursor:pointer;}
-.header .header-container nav.navigation .nav-item span {white-space:nowrap;}
-.header .header-container nav.navigation .nav-item::after {content:""; display:block; position:absolute; bottom:0; left:50%; width:0; height:2px; background-color:#FF3A4A; transition: all 0.2s ease;}
-.header .header-container nav.navigation .nav-item.active {color:#000; font-weight:700;}
-.header .header-container nav.navigation .nav-item.active::after {left:0; width:100%;}
-/* // header navigation */
-
-/* header logged */
-.logged-in-section {display:flex; align-items:center; gap:20px;}
-.logged-in-section .user-profile-section  {display:flex; align-items:center; gap:10px;}
-.logged-in-section .user-profile-section .user-profile-avatar {display:flex; justify-content:center; align-items:center; width:32px; height:32px; border-radius:100%; background: linear-gradient(135deg, #667eea, #764ba2);}
-.logged-in-section .user-profile-section .user-info .user-email {color:#333; font-size:14px; font-family:'Pretendard';}
-/* header logged */
-
-/* header login/logout button */
-.logged-in-section button.login-btn,
-.logged-in-section button.logout-btn {width:98px; height:40px; border:1px solid #ccc; border-radius:4px; font-size:18px; font-weight:500; cursor:pointer;}
-.logged-in-section button.login-btn {background-color:#fff; color:#333;}
-.logged-in-section button.logout-btn {background-color: rgba(220, 53, 69, .1); border-color: #dc3545; color: #ff6b7a;}
-.logged-in-section button.login-btn:hover {background-color: #fff; color: #333}
-.logged-in-section button.logout-btn:hover {background-color: #dc3545; color:#fff;}
-/* header login/logout button */
-
-/* header search */
-.search-section {margin-left:40px;}
-.search-section .header-search-bar {position:relative; width:240px; height:40px;}
-.search-section .header-search-bar .header-search-input {width:100%; height:100%; margin:0; padding:10px 40px 10px 10px; border:0; border-radius:4px; background-color:rgba(255,255,255,0.7); font-size:14px;; outline:0;}
-.search-section .header-search-bar .header-search-input::placeholder {color:#888;}
-.search-section .header-search-bar .header-search-icon {display:flex; justify-content:center; align-items:center; position:absolute; top:6px; right:10px; width:28px; height:28px; cursor:pointer;}
-/* // header search */
-
-
-
-
-/* 개발자 센터 소개 */
-.pass-content {padding:100px 0 40px;}
-.pass-content .inner .tit_wrap {margin-bottom:47px; text-align:center;}
-.pass-content .inner .tit_wrap h2 {color:#000; font-size:28px; line-height:34px; font-weight:700;}
-.pass-content .inner .tit_wrap p {margin-top:0.9375em; color:#555; font-size:16px; font-weight:400;}
-
-.pass-section {display:grid; grid-template-columns:auto auto;; max-width:1000px; gap:32px; margin:0 auto; text-align:left;}
-.service-category {display:flex; flex-direction:column; position:relative; top:0; width:100%; width:484px; height:240px; padding:30px 30px 33px; background-color: #fff; border-radius:10px; border:1px solid #ddd; transition:all 0.2s ease-in-out;}
-.service-category .category-header {display:flex; justify-content:space-between; gap:32px;}
-.service-category .category-header .category-icon {width:84px; min-width:84px; height:84px;}
-.service-category .category-header .category-icon img {display:block; width:100%;}
-.service-category .category-header .category-info {display:flex; flex-direction:column; flex:1; gap:9px; width:100%;}
-.service-category .category-header .category-info h3 {font-size:20px; line-height:1.5em; font-weight:700;}
-.service-category .category-header .category-info p {font-size:14px; line-height:1.2em; font-weight:500; word-break:keep-all;}
-.service-category .service-list {flex:1; padding-left:116px;}
-.service-category .service-list .service-item {padding-top:16px; border-top:1px solid #ddd;}
-.service-category .service-list .service-item p {}
-.service-category .service-list .service-item ul {display:flex; flex-wrap:wrap; flex-direction:column; align-content:space-between; gap:12px; height:84px;}
-.service-category .service-list .service-item ul li {display:flex; align-items:center; gap:6px; position:relative; color:#555; font-size:14px; line-height:16px; font-weight:500;}
-.service-category .service-list .service-item ul li::before {content:""; display:block; width:16px; height:16px; background:url('./images/Group 251.png') no-repeat center center / contain;}
-/* // 개발자 센터 소개 */
-@media screen and (max-width:768px) {
-	.pass-content {padding:0}
-	.pass-content .inner .tit_wrap {padding:0 20px;}
-	.pass-section {display:flex; flex-direction:column; padding:0 20px; gap:20px;}
-	.service-category {width:100%; height:auto; gap:10px; padding:20px;}
-	.service-category .category-header {flex-direction:row-reverse; align-items:center; gap:10px;}
-	.service-category .category-header .category-icon {width:50px; min-width:auto; height:auto;}
-	.service-category .category-header .category-info p {line-height:1.5em; word-break:keep-all;}
-	.service-category .service-list {padding:0;}
-	.service-category .service-list .service-item {border-top-style:dashed;}
-}
-</style>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..700&display=block" />
 </head>
 
 <body>

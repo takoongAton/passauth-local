@@ -4,96 +4,15 @@
 	<title>PASS 인증서 개발자 센터 메인</title>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+
 	<link rel="stylesheet t" href="./css/reset.css" />
 	<link rel="stylesheet t" href="./css/dev_passauth.css" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..700&display=block" />
-<style>
-/* 가이드 기본 틀 */
-.guide-intro-page {margin-left:280px;}
-.guide-body {display:flex; flex-direction:column; gap:60px 0; width:100%;}
-/* // 가이드 기본 틀 */
-
-.guide-intro-header {display:flex; background:#ff3747; background:linear-gradient(90deg,#ff3747,#ff9558); padding:80px 0;}
-.guide-intro-header .inner {width:100%; max-width:1080px; margin:0 20px; padding:0 40px;}
-.guide-intro-header .txt_wrap {display:flex; flex-direction:column; align-items:flex-start; gap:12px;}
-.guide-intro-header .txt_wrap h1 {color:#fff; font-size:32px; line-height:42px; font-weight:700; margin:0;}
-.guide-intro-header .txt_wrap p {color:hsla(0, 0%, 100%, .9); font-size:16px; line-height:24px; margin:0;}
-
-.guide-content {padding:80px 0 100px;}
-.guide-content > .inner {width:100%; margin:0 auto; padding:0 40px;}
-
-.guide-section {max-width:1200px; margin:0 auto;}
-.guide-section + .guide-section {margin-top:100px;}
-
-
-/* 가이드 섹션 타이틀 */
-.guide-title {display:flex; flex-direction:column; gap:8px; width:100%; margin-bottom:20px; color:#000;}
-.guide-title h2 {font-size:24px; font-weight:700;}
-.guide-title p {font-size:16px; font-weight:400;}
-/* // 가이드 섹션 타이틀 */
-
-/* 가이드 스크린샷 */
-.guide-image-container .guide-image-placeholder {display:flex; justify-content:center; align-items:center; padding:60px 40px; border-radius:8px; background-color:#F8F8F8;}
-.guide-image-container .guide-image-placeholder img {width:100%; max-width:1024px;}
-/* // 가이드 스크린샷 */
-
-/* 이용방법 */
-.guide-usage ol {display:flex; flex-direction:column; gap:40px;}
-.guide-usage ol li {display:flex; flex-direction:column; align-items: flex-start;}
-.guide-usage ol li div.guide-step-text {display:flex; align-items:flex-start; gap:6px 10px;}
-.guide-usage ol li div.guide-step-text span.step {min-width:65px; padding:0 0.83333em; border-radius:14px; background-color:rgba(255,58,74,0.078); color:#FF3A4A; font-size:12px; line-height:2.16666em; font-weight:bold;}
-.guide-usage ol li div.guide-step-text p.txt {flex:1; color:#000; font-size:14px; line-height:1.85714em; font-weight:700; word-break:keep-all;}
-.guide-usage ol li div.guide-step-text p.txt strong {color:#FF3A4A;}
-/* // 이용방법 */
-
-/* 설정 바로 가기 */
-.guide-detail {display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; width:100%; margin-top:24px;}
-.guide-detail .guide-detail-item {width:calc(50% - 8px); padding:26px 24px; border-radius:8px; border:1px solid transparent; background-color:#f5f5f5; transition:all 0.3s ease; box-shadow:0 1px 4px rgba(255,255,255,0); cursor:pointer;}
-.guide-detail .guide-detail-item .guide-detail-content {display:flex; flex-direction:column; justify-content:center; position:relative; gap:8px; width:100%; height:100%; padding-right:36px; font-size:14px;}
-.guide-detail .guide-detail-item .guide-detail-content h4 {color:#000;}
-.guide-detail .guide-detail-item .guide-detail-content p {color:#555; word-break:keep-all;}
-.guide-detail .guide-detail-item .guide-detail-content::after {content:""; display:block; position:absolute; top:50%; right:0; width:36px; height:36px; background:url('./images/ico_arrow.png') no-repeat center / contain; transform:translateY(-50%); transition:right 0.24s ease-in-out;}
-.guide-detail .guide-detail-item:hover {background-color:#fff; border-color:#f5f5f5; box-shadow:1px 2px 4px rgba(0,0,0,0.16);}
-.guide-detail .guide-detail-item:hover .guide-detail-content::after {right:-6px;}
-/* // 설정 바로 가기 */
-
-@media (max-width:1024px) {
-	.guide-detail {flex-direction:row; gap:10px; margin-top:14px;}
-	.guide-detail .guide-detail-item {width:100%; padding:20px;}
-}
-
-@media (max-width:768px) {
-	.guide-intro-page {margin-left:0;}
-	.guide-body {gap:30px;}
-
-	.guide-intro-header {padding:40px 0;}
-	.guide-intro-header .inner {padding:0 20px;}
-	.guide-intro-header .txt_wrap h1 {font-size:24px; line-height:32px;}
-	.guide-intro-header .txt_wrap p {font-size:14px;}
-
-	.guide-content {padding:60px 0 80px;}
-	.guide-content > .inner {padding:0 20px;}
-
-	.guide-section + .guide-section {margin-top:50px;}
-
-	.guide-title h2 {font-size:20px;}
-	.guide-title p {font-size:14px;}
-
-	.guide-image-container .guide-image-placeholder {padding:20px;}
-
-	.guide-usage ol {gap:20px;}
-	.guide-usage ol li div.guide-step-text {flex-direction:column;}
-
-	.guide-detail .guide-detail-item .guide-detail-content::after {width:24px; height:24px;}
-	.guide-detail .guide-detail-item:hover .guide-detail-content::after {right:-4px;}
-}
-
-</style>
 </head>
 
 <body>
@@ -312,6 +231,10 @@
 
 								<div class="guide-image-container">
 									<div class="guide-image-placeholder">
+										<img src="./images/screenshot_sample.png" alt="샘플 가이드 화면" />
+									</div>
+									<!-- // guide-image-placeholder -->
+									  <div class="guide-image-placeholder">
 										<img src="./images/screenshot_sample.png" alt="샘플 가이드 화면" />
 									</div>
 									<!-- // guide-image-placeholder -->

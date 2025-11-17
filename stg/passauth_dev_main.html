@@ -5,61 +5,16 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-	<!-- <link rel="stylesheet t" href="../../css/reset.css" /> -->
+	
+	<link rel="stylesheet t" href="./css/reset.css" />
+	<link rel="stylesheet t" href="./css/dev_passauth.css" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&amp;display=swap" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..700&display=block" />
 
 
 <style>
-* {margin:0; padding:0; list-style:none; text-decoration:none; color:inherit; box-sizing:border-box;}
-
-
-/* header container */
-.header {position:fixed; top:0; left:0; width:100%; background-color:#eee; color:#fff; z-index:1000;}
-.header .header-container {display:flex; justify-content:space-between; gap:20px; align-items:center; max-width:1920px; padding:0 40px; margin:0 auto;}
-.header .header-container .logo-section {flex:1; line-height:1em;}
-.header .header-container .logo-section div.logo-background {display:inline-block; cursor: pointer;}
-.header .header-container .logo-section div.logo-background img {width:auto; height:24px;}
-/* // header container */
-
-/* header navigation */
-.header .header-container nav.navigation {display:flex; align-items:center; gap:20px;}
-.header .header-container nav.navigation .nav-item {display:flex; align-items:center; position:relative; height:68px; padding:21px 12px; color:#666; cursor:pointer;}
-.header .header-container nav.navigation .nav-item span {white-space:nowrap;}
-.header .header-container nav.navigation .nav-item::after {content:""; display:block; position:absolute; bottom:0; left:50%; width:0; height:2px; background-color:#FF3A4A; transition: all 0.2s ease;}
-.header .header-container nav.navigation .nav-item.active {color:#000; font-weight:700;}
-.header .header-container nav.navigation .nav-item.active::after {left:0; width:100%;}
-/* // header navigation */
-
-/* header logged */
-.logged-in-section {display:flex; align-items:center; gap:20px;}
-.logged-in-section .user-profile-section  {display:flex; align-items:center; gap:10px;}
-.logged-in-section .user-profile-section .user-profile-avatar {display:flex; justify-content:center; align-items:center; width:32px; height:32px; border-radius:100%; background: linear-gradient(135deg, #667eea, #764ba2);}
-.logged-in-section .user-profile-section .user-info .user-email {color:#333; font-size:14px; font-family:'Pretendard';}
-/* header logged */
-
-/* header login/logout button */
-.logged-in-section button.login-btn,
-.logged-in-section button.logout-btn {width:98px; height:40px; border:1px solid #ccc; border-radius:4px; font-size:18px; font-weight:500; cursor:pointer;}
-.logged-in-section button.login-btn {background-color:#fff; color:#333;}
-.logged-in-section button.logout-btn {background-color: rgba(220, 53, 69, .1); border-color: #dc3545; color: #ff6b7a;}
-.logged-in-section button.login-btn:hover {background-color: #fff; color: #333}
-.logged-in-section button.logout-btn:hover {background-color: #dc3545; color:#fff;}
-/* header login/logout button */
-
-/* header search */
-.search-section {margin-left:40px;}
-.search-section .header-search-bar {position:relative; width:240px; height:40px;}
-.search-section .header-search-bar .header-search-input {width:100%; height:100%; margin:0; padding:10px 40px 10px 10px; border:0; border-radius:4px; background-color:rgba(255,255,255,0.7); font-size:14px;; outline:0;}
-.search-section .header-search-bar .header-search-input::placeholder {color:#888;}
-.search-section .header-search-bar .header-search-icon {display:flex; justify-content:center; align-items:center; position:absolute; top:6px; right:10px; width:28px; height:28px; cursor:pointer;}
-/* // header search */
-
-
-
 /* 메인 컨텐츠 타이틀 (메인공통) */
 .main-layout-content .inner .tit_wrap {margin-bottom:47px; text-align:center;}
 .main-layout-content .inner .tit_wrap h2 {color:#000; font-size:28px; line-height:34px; font-weight:700;}
@@ -71,11 +26,10 @@
 /* main-intro_wrap */
 .main-intro_wrap {display:flex; background: #FF3747; background: linear-gradient(90deg, rgba(255, 55, 71, 1) 0%, rgba(255, 149, 88, 1) 100%);}
 .main-intro_wrap .inner {display:flex; flex-direction:column; justify-content:center; position:relative; gap:48px; height:400px; width:100%; max-width:1080px; margin:0 auto; padding:6px 40px 0;}
-.main-intro_wrap .inner {}
-.main-intro_wrap .inner div.txt_wrap {display:flex; flex-direction:column; align-items: start; gap:8px; color:#fff;}
+.main-intro_wrap .inner div.txt_wrap {display:flex; flex-direction:column; align-items:start; gap:8px; position:relative; z-index:1; color:#fff; text-shadow:0 2px 2px rgba(0,0,0,0.16);}
 .main-intro_wrap .inner div.txt_wrap h2 {color:#fff; font-size:32px; line-height:42px; font-weight:700;}
 .main-intro_wrap .inner div.txt_wrap p {color:rgba(255,255,255,0.7); font-size:16px;}
-.main-intro_wrap .inner button.btn {position:relative; top:0; left:0; width:120px; height:52px; border-radius:4px; background-color:#333; border:none; transition:all 0.2s ease-in-out; cursor:pointer;}
+.main-intro_wrap .inner button.btn {position:relative; top:0; left:0; z-index:1; width:120px; height:52px; border-radius:4px; background-color:#333; border:none; transition:all 0.2s ease-in-out; cursor:pointer;}
 .main-intro_wrap .inner button.btn span {color:#fff; font-size:14px; font-weight:500;}
 .main-intro_wrap .inner button.btn:hover {box-shadow:0 1px 2px rgba(0,0,0,0.16);}
 .main-intro_wrap .inner::after {content:""; display:block; position:absolute; right:101px; width:320px; height:320px; background:url('./images/img_main01.svg') no-repeat center / contain; animation: intro_ani 2s infinite ease-in-out;}
@@ -113,21 +67,52 @@
 /* 메인 최근 공지사항 */
 .main-notice_wrap {padding:100px 0 120px; background-color:#f5f5f5;  text-align:center;}
 .main-notice_wrap .inner {width:100%; max-width:1080px; margin:0 auto; padding:0 40px;}
-.main-notice_wrap .main_notice_wrap {display:grid; grid-template-columns:auto auto;; max-width:1000px; gap:32px; margin:0 auto; text-align:left;}
-.main-notice_wrap .main-notice-card {display:flex; flex-direction:column; position:relative; top:0; gap:20px; width:100%; max-width:484px; padding:30px 31px; background-color: #fff; border-radius:10px; transition:all 0.2s ease-in-out;}
-.main-notice_wrap .main-notice-card div.tit {padding-bottom:20px; border-bottom:1px solid #ddd; color:#000; font-size:18px; line-height:22px; font-weight:700;;}
-.main-notice_wrap .main-notice-card div.txt {flex:1; color:#333; font-size:14px; line-height:22px;}
+.main-notice_wrap .main-notice-card-list {display:flex; flex-wrap:wrap; justify-content:space-between; gap:32px; width:100%; margin-top:24px; text-align:left;}
+.main-notice_wrap .main-notice-card {display:flex; flex-direction:column; position:relative; top:0; gap:20px; width:calc(50% - 16px); padding:30px 31px; background-color: #fff; border-radius:10px; transition:all 0.2s ease-in-out;}
+.main-notice_wrap .main-notice-card div.tit {padding-bottom:20px; border-bottom:1px solid #ddd; color:#000; font-size:18px; line-height:22px; font-weight:700; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.main-notice_wrap .main-notice-card div.txt {flex:1; color:#333; font-size:14px; line-height:22px; display:-webkit-box; -webkit-box-orient:vertical; overflow:hidden; -webkit-line-clamp:6;}
 .main-notice_wrap .main-notice-card div.date {color:#888; font-size:14px; line-height:20px;}
 .main-notice_wrap .main-notice-card button.btn {position:absolute; right:31px; bottom:30px; height:20px; border:none; background-color:transparent; color:#FF3A4A; font-size:14px; cursor:pointer;}
 .main-notice_wrap .main-notice-card:hover {top:-4px; border-radius:16px; box-shadow:1px 2px 4px rgba(0,0,0,0.16);}
 .main-notice_wrap .btn_more {display:inline-block; width:160px; height:52px; margin-top:40px; background-color:#333; border-radius:4px;}
 .main-notice_wrap .btn_more span {display:inline-block; line-height:20px; color:#fff; font-size:14px; font-weight:500;}
+@media (max-width:768px) {
+	.main-layout-content .inner .tit_wrap {margin-bottom:24px;}
+	.main-layout-content .inner .tit_wrap h2 {font-size:24px;}
+	.main-layout-content .inner .tit_wrap p {word-break:keep-all;}
+
+	.main-intro_wrap .inner {gap:24px; height:auto; padding:40px 20px;}
+	.main-intro_wrap .inner::after {width:140px; height:140px; right:20px; bottom:20px;}
+	.main-intro_wrap .inner div.txt_wrap h2 {font-size:24px;}
+	.main-intro_wrap .inner div.txt_wrap p {color:#fff;}
+
+	.dev-tools_wrap {padding:40px 0 50px;}
+	.dev-tools_wrap .inner {padding:0 20px;}
+
+	.main-tool-cards.row {display:flex; flex-direction:column;}
+	.main-tool-cards.row .main-tool-card {flex-direction:row-reverse; justify-content:space-between; align-items:center; gap:20px; padding:8px 20px}
+	.main-tool-cards.row .main-tool-card .txt_wrap {flex:1;}
+	.main-tool-cards.row .main-tool-card .txt_wrap p br {display:none;}
+	.main-tool-cards.col .main-tool-card {padding:8px 20px;}
+	.main-tool-cards.col .main-tool-card::after {width:30px; height:30px;}
+	 
+	.main-notice_wrap {padding:40px 0 50px;}
+	.main-notice_wrap .inner {padding:0 20px;}
+	.main-notice_wrap .main-notice-card-list {flex-direction:column; gap:20px}
+	.main-notice_wrap .main-notice-card {width:100%; padding:16px;}
+	.main-notice_wrap .main-notice-card button.btn {bottom:16px; right:20px;}}
+
+@media (max-width:390px) {
+	.main-tool-cards .main-tool-card .main-tool-card-icon img {width:60px; height:60px;}
+	.main-tool-cards .main-tool-card h2 {font-size:16px;}
+	.main-tool-cards.row .main-tool-card,
+	.main-tool-cards.col .main-tool-card {gap:10px;}
+}
 /* // 메인 최근 공지사항 */
 </style>
 </head>
 
 <body>
-
 <div class="main-layout">
 
 	<header class="header">
@@ -137,42 +122,49 @@
 					<img src="./images/logo_passdev.png" alt="PASS" class="logo-bg-image">
 				</div>
 			</div>
-			<nav class="navigation">
-				<div class="nav-item active">
-					<span>가이드</span>
+			<div class="nav_wrap">
+				<div class="btn_nav_close"><button type="button" class="btn_close"><span>메뉴닫기</span></button></div>
+				<nav class="navigation">
+					<div class="nav-item active">
+						<span>가이드</span>
+					</div>
+					<div class="nav-item ">
+						<span>공지사항</span>
+					</div>
+					<div class="nav-item ">
+						<span>문의/지원</span>
+					</div>
+					<div class="nav-item ">
+						<span>관리</span>
+					</div>
+				</nav>
+				<div class="search-section">
+					<div class="header-search-bar">
+						<input type="text" placeholder="검색어를 입력하세요" class="header-search-input">
+						<div class="header-search-icon">
+							<img src="./images/ico_search.svg" alt="검색">
+						</div>
+					</div>
 				</div>
-				<div class="nav-item ">
-					<span>공지사항</span>
-				</div>
-				<div class="nav-item ">
-					<span>문의/지원</span>
-				</div>
-				<div class="nav-item ">
-					<span>관리</span>
-				</div>
-			</nav>
-			<div class="search-section">
-				<div class="header-search-bar">
-					<input type="text" placeholder="검색어를 입력하세요" class="header-search-input">
-					<div class="header-search-icon">
-						<img src="./images/ico_search.svg" alt="검색">
+				<div class="auth-section">
+					<div class="logged-in-section">
+						<div class="user-profile-section">
+							<div class="user-profile-avatar" title="">
+								<span class="user-initial">U</span>
+							</div>
+							<div class="user-info">
+								<span class="user-email">takoong</span>
+							</div>
+						</div>
+						<button class="login-btn"><span>로그인</span></button>
 					</div>
 				</div>
 			</div>
-			<div class="auth-section">
-				<div class="logged-in-section">
-					<div class="user-profile-section">
-						<div class="user-profile-avatar" title="">
-							<span class="user-initial">U</span>
-						</div>
-						<div class="user-info">
-							<span class="user-email">takoong</span>
-						</div>
-					</div>
-					<button class="login-btn"><span>로그인</span></button>
-				</div>
-			</div>
+			<!-- // nav_wrap -->
+
+			<div class="btn_nav_open"><button type="button" class="btn_open"><span>메뉴열기</span></button></div>
 		</div>
+		<!-- // header-container -->
 	</header>
 	<!-- // header -->
 	 
@@ -225,10 +217,10 @@
 							</div>
 						</div>
 						<div class="main-tool-card">
-							<div class="main-tool-card-icon"><img src="./images/img_96_04.png" alt="아이콘" /></div>
+							<div class="main-tool-card-icon"><img src="./images/img_96_05.png" alt="아이콘" /></div>
 							<div class="txt_wrap">
-								<h2>자주 묻는 질문</h2>
-								<p>서비스 이용 중 궁금하신 점을 <br />FAQ에서 확인해보세요.</p>
+								<h2>계약 문의하기</h2>
+								<p>계약관련하여 궁금하신 점을 <br />문의 해주세요.</p>
 							</div>
 						</div>
 					</div>
@@ -279,7 +271,7 @@
 					</div>
 				</div>
 
-				<div class="main_notice_wrap">
+				<div class="main-notice-card-list">
 					<div class="main-notice-card">
 						<div class="tit">공지사항 제목입니다.</div>
 						<div class="txt">
@@ -326,7 +318,7 @@
 						<button type="button" class="btn"><strong>자세히 보기</strong></button>
 					</div>
 				</div>
-				<!-- // main_notice_wrap -->
+				<!-- // main-notice-card-list -->
 
 				<button type="button" class="btn_more"><span class="txt">전체 공지사항 보기</span></button>
 			</div>
@@ -344,7 +336,25 @@
 
 <style>
 /* 이건 사용 안함 */
-.main-layout-content {padding-top:68px;}
+.main-layout-content {padding-top:60px;}
 </style>
+
+<script>
+let btn_open = document.querySelector(".btn_open")
+btn_open.addEventListener("click", function(){
+	document.querySelector(".nav_wrap").classList.add("active");
+})
+
+let btn_close = document.querySelector(".btn_close")
+btn_close.addEventListener("click", function(){
+	document.querySelector(".nav_wrap").classList.remove("active");
+})
+
+window.addEventListener("resize", function(){
+	if(window.innerWidth > 768) {
+		document.querySelector(".nav_wrap").classList.remove("active");
+	}
+});
+</script>
 </body>
 </html>
